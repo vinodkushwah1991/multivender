@@ -1,0 +1,23 @@
+<extensions xmlns="http://www.demandware.com/xml/bmmodules/2007-12-11"
+xmlns:xsi ="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.demandware.com/xml/bmmodules/2007-12-11 bmext.xsd">
+
+  
+  <menuitem id="custom-menu-item" position="100" site="true">
+    <name xml:lang="x-default">Seller Dashboards</name>
+    <short_description xml:lang="x-default">Seller Dashboard</short_description>
+    <description xml:lang="x-default">Its a tab for showing the Seller dashboard</description>
+    <icon></icon>
+  </menuitem>
+
+  <menuaction id="custom-menu-item5" menupath="custom-menu-item" position="1" site="true">
+    <name xml:lang="x-default">Seller List</name>
+    <short_description xml:lang="x-default">All Registered Vendor</short_description>
+    <description xml:lang="x-default">List of Sellers who all are selling products</description>
+    <exec pipeline="SellerList" node="Extend" />
+    <sub-pipelines>
+      <pipeline name="SellerList"/>
+    </sub-pipelines>
+    <icon></icon>
+  </menuaction>
+
+</extensions>

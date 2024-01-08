@@ -1,0 +1,141 @@
+{
+    "step-types": {
+      "script-module-step": [
+        {
+          "@type-id": "custom.createProductSellerRef",
+          "@supports-parallel-execution": "true",
+          "@supports-site-context": "true",
+          "@supports-organization-context": "false",
+          "description": "Its a job for creating product seller ref id for sellers",
+          "module": "app_mutltivendor_cartridge/cartridge/scripts/job/sellerRefCreate.js",
+          "function": "execute",
+          "transactional": "true",
+          "timeout-in-seconds": "1800",
+  
+          "status-codes": {
+            "status": [{
+                "@code": "ERROR",
+                "description": "Used when the step failed with an error."
+              },
+              {
+                "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+              },
+              {
+                "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+              }
+            ]
+          }
+        },
+        {
+          "@type-id": "custom.updateInventory",
+          "@supports-parallel-execution": "true",
+          "@supports-site-context": "true",
+          "@supports-organization-context": "false",
+          "description": "Its a job for updating the inventory of the particular vendor",
+          "module": "app_mutltivendor_cartridge/cartridge/scripts/job/inventoryUpdateOnSellerRef.js",
+          "function": "execute",
+          "transactional": "true",
+          "timeout-in-seconds": "1800",
+  
+          "status-codes": {
+            "status": [{
+                "@code": "ERROR",
+                "description": "Used when the step failed with an error."
+              },
+              {
+                "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+              },
+              {
+                "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+              }
+            ]
+          }
+        },
+        {
+          "@type-id": "custom.updatePricebook",
+          "@supports-parallel-execution": "true",
+          "@supports-site-context": "true",
+          "@supports-organization-context": "false",
+          "description": "Its a job for updating the Pricebook of the particular vendor",
+          "module": "app_mutltivendor_cartridge/cartridge/scripts/job/pricebookUpdateOnSellerRef.js",
+          "function": "execute",
+          "transactional": "true",
+          "timeout-in-seconds": "1800",
+  
+          "status-codes": {
+            "status": [{
+                "@code": "ERROR",
+                "description": "Used when the step failed with an error."
+              },
+              {
+                "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+              },
+              {
+                "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+              }
+            ]
+          }
+        },
+        {
+          "@type-id": "custom.updateStore",
+          "@supports-parallel-execution": "true",
+          "@supports-site-context": "true",
+          "@supports-organization-context": "false",
+          "description": "Its a job for updating the inventory of the particular vendor",
+          "module": "app_mutltivendor_cartridge/cartridge/scripts/job/storeUpdateOnSellerRef.js",
+          "function": "execute",
+          "transactional": "true",
+          "timeout-in-seconds": "1800",
+  
+          "status-codes": {
+            "status": [{
+                "@code": "ERROR",
+                "description": "Used when the step failed with an error."
+              },
+              {
+                "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+              },
+              {
+                "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+              }
+            ]
+          }
+        },
+        {
+          "@type-id": "custom.updateShipping",
+          "@supports-parallel-execution": "true",
+          "@supports-site-context": "true",
+          "@supports-organization-context": "false",
+          "description": "Its a job for updating the Shipping of the particular vendor",
+          "module": "app_mutltivendor_cartridge/cartridge/scripts/job/shippingUpdateOnSellerReference.js",
+          "function": "execute",
+          "transactional": "true",
+          "timeout-in-seconds": "1800",
+  
+          "status-codes": {
+            "status": [{
+                "@code": "ERROR",
+                "description": "Used when the step failed with an error."
+              },
+              {
+                "@code": "FINISHED",
+                "description": "Used when the step finished successfully."
+              },
+              {
+                "@code": "FINISHED_WITH_WARNINGS",
+                "description": "Used when the step finished with warnings."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }

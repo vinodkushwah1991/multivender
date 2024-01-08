@@ -1,0 +1,44 @@
+ <isloop items="${pdict.productSearch.productIds}" var="product">
+    <div class="col-6 col-sm-4">
+        <isobject object="${product.productSearchHit}" view="searchhit">
+            <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.productID, 'swatches', true, 'ratings', true)}" />
+        </isobject>
+
+        <isscript>
+            var maxPrice = null;
+            var minPrice = null;
+
+            var foundMinPrice = false;
+            var allPrices = [];
+        </isscript>
+
+        <isloop items="${pdict.prices}" var="price" status="loopstatus">
+            <isif condition="${price.product.productID == product.productID}">
+                <isscript>
+                    var priceValue = price.test;
+                    allPrices.push(priceValue);
+
+                    if (maxPrice === null || priceValue > maxPrice) {
+                        maxPrice = priceValue;
+                    }
+
+                    if (priceValue > 0 && (!foundMinPrice || priceValue < minPrice)) {
+                        minPrice = priceValue;
+                        foundMinPrice = true;
+                    }
+                </isscript>
+            </isif>
+        </isloop>
+
+        <!-- Display the minimum price (greater than 0) or max price if none are greater than 0 -->
+        <isif condition="${maxPrice !== null && maxPrice !== 0 && !allPrices.empty}">
+            <iscomment> <p>Min Price (greater than 0): ${foundMinPrice ? minPrice : maxPrice}</p>
+            <p>Max Price: ${maxPrice}</p>
+            <p>All Prices: ${allPrices.join(', ')}</p> </iscomment>
+            
+            <h5> Prices Range : ${foundMinPrice ? minPrice : maxPrice} - ${maxPrice}</h5>
+      
+        </isif>
+    </div>
+</isloop>
+

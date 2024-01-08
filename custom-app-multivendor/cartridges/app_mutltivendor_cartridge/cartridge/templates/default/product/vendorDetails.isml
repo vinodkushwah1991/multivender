@@ -1,0 +1,5 @@
+
+<div>
+    ${pdict.vendorData}
+    ${pdict.name}
+</div>

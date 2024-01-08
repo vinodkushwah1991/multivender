@@ -1,0 +1,8 @@
+<isif condition="${sellers != null || sellers != undefined || sellers != ""}">
+    <div class="allPricebook">
+        ${sellers.pricebookIds[0] == null ? "":sellers.pricebookIds[0] }
+        ${sellers.localePrice == null ? "":sellers.localePrice}
+    </div>
+    <iselse />
+        ${price.formatted == null ? "" : price.formatted }
+</isif>

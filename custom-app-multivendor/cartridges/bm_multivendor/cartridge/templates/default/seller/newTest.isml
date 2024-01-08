@@ -1,0 +1,50 @@
+<h1 style="text-align:center">List of Product seller Ref object</h1>
+
+    
+<table border="1" style="width:100%">
+    <tr>
+        <th>Vendor Ref ID</th>
+        <th>Vendor Seller Id</th>
+        <th>Vendor Shipping Method Ids</th>
+        <th>Vendor Price Book Ids</th>
+        <th>Vendor Inventory List Ids</th>
+    </tr>
+    <isloop items="${pdict.productSellerRefList}" var="productSellerRefObj" status="loopstatus">
+        <tr>
+            <td>${productSellerRefObj.vendorRefId}</td>
+            <td>${productSellerRefObj.vendorSellerId}</td>
+            <td>${productSellerRefObj.vendorShippingMethodIds}</td>
+            <td>${productSellerRefObj.vendorPriceBookIds}</td>
+            <td>${productSellerRefObj.vendorInventoryListIds}</td>
+        </tr>
+         </isloop>
+</table>
+   
+
+
+
+
+
+
+<h1 style="text-align:center">List of Sellers object</h1>
+
+    
+<table border="1" style="width:100%">
+    <tr>
+        <th>Vendor ID</th>
+        <th>Vendor Name</th>
+        <th>Vendor Last Name</th>
+        <th>Vendor Price Book</th>
+        <th>Vendor Inventory</th>
+    </tr>
+    <isloop items="${pdict.sellerList}" var="vendorsList" status="loopstatus">
+        <tr>
+            <td>${vendorsList.vendorId}</td>
+            <td>${vendorsList.vendorName}</td>
+            <td>${vendorsList.vendorLastName}</td>
+            <td>${vendorsList.vendorPriceBook}</td>
+            <td>${vendorsList.vendorInventory}</td>
+        </tr>
+         </isloop>
+</table>
+   
